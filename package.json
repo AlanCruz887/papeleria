@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/HailedSquare881/papeleria/issues"
   },
-  "homepage": "https://github.com/HailedSquare881/papeleria#readme"
+  "homepage": "https://github.com/HailedSquare881/papeleria#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
