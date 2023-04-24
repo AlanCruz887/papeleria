@@ -14,7 +14,7 @@ app.get('/:v',(req,res)=>{
   const valor = req.params.v
   let t='';
   for (let index = 0; index < 11; index++) {
-   t+=(valor + " x " + index + " = " + index*valor)
+   t+=(valor + " x " + index + " = " + index*valor + "<br>")
   }
   res.send(t)
   
