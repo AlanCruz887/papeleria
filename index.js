@@ -1,24 +1,30 @@
 const express = require('express');
+const mongoose = require('mongoose')
 const morgan = require('morgan');
+const proveedor = require('./proveedor');
 const app = express()
 //settings
 app.set('port',process.env.PORT||3600);
 
+mongoose.connect("mongodb+srv://Alan:HailedSquare881@alan.rbrdfgi.mongodb.net/papeleriadb?retryWrites=true&w=majority")
+.then(
+    db=>console.log("Mongo db connect")
+)
+.catch(
+    err=>console.error(err)
+)
+
+
 
 //middlewares
 app.use(morgan('dev'))
+app.use(express.json())
 
 
 //rutas
-app.get('/:v',(req,res)=>{
-  const valor = req.params.v
-  let t='';
-  for (let index = 0; index < 11; index++) {
-   t+=(valor + " x " + index + " = " + index*valor + "<br>")
-  }
-  res.send(t)
+app.get('/',(req,res)=>{
+  res.send(req.body)
   
- 
 })
 
 app.listen(app.get('port'),()=>{
